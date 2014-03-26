@@ -89,6 +89,21 @@ static CGFloat kFlipAnimationUpdateInterval = 0.5; // = 2 times per second
     return self;
 }
 
+- (void) addShadow:(UIColor*)color opacity:(CGFloat)opacity {
+    [self addShadow:self.dayFlipNumberView color:color opacity:opacity];
+    [self addShadow:self.hourFlipNumberView color:color opacity:opacity];
+    [self addShadow:self.minuteFlipNumberView color:color opacity:opacity];
+    [self addShadow:self.secondFlipNumberView color:color opacity:opacity];
+}
+
+- (void) addShadow:(UIView*)view color:(UIColor*)color opacity:(CGFloat)opacity {
+    view.layer.shadowColor = color.CGColor;
+    view.layer.shadowOffset = CGSizeMake(-2, 2);
+    view.layer.shadowOpacity = opacity;
+    view.layer.shadowRadius = 1.0;
+    view.clipsToBounds = NO;
+}
+
 #pragma mark setter
 
 - (NSUInteger)zDistance;
@@ -107,6 +122,12 @@ static CGFloat kFlipAnimationUpdateInterval = 0.5; // = 2 times per second
 {
     _targetDate = targetDate;
     [self updateValuesAnimated:NO];
+}
+
+
+- (void)setIsSecondsHidden:(BOOL)hidden {
+    _isSecondsHidden = hidden;
+    [self.secondFlipNumberView setHidden:_isSecondsHidden];
 }
 
 #pragma mark layout

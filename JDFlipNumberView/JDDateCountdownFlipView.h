@@ -10,6 +10,7 @@
 
 @property (nonatomic, strong) NSDate *targetDate;
 @property (nonatomic, assign) NSUInteger zDistance;
+@property (nonatomic, assign) BOOL isSecondsHidden;
 
 - (id)initWithDayDigitCount:(NSInteger)dayDigits;
 - (id)initWithDayDigitCount:(NSInteger)dayDigits
@@ -17,6 +18,8 @@
 
 - (void)start;
 - (void)stop;
+
+- (void) addShadow:(UIColor*)color opacity:(CGFloat)opacity;
 
 - (void)updateValuesAnimated:(BOOL)animated;
 
