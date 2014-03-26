@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.name         = 'JDFlipNumberView'
   s.version      = '2.2.2'
   s.author       = { 'Markus Emrich' => 'markus@nxtbgthng.com' }
-  s.homepage     = 'https://github.com/jaydee3/JDFlipNumberView'
+  s.homepage     = 'https://github.com/hufkens/JDFlipNumberView'
   s.license      = 'MIT'
     
   # DESCRIPTION
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.screenshot   = 'https://github.com/jaydee3/JDFlipNumberView/raw/master/gfx/screenshots.png'
 
   # BUILD SETTINGS
-  s.source       = { :git => 'https://github.com/jaydee3/JDFlipNumberView.git', :tag => "pod-#{s.version}" }
+  s.source       = { :git => 'https://github.com/hufkens/JDFlipNumberView.git', :tag => "pod-#{s.version}" }
   s.platform     = :ios, '5.0'
   s.frameworks   = 'QuartzCore'
   s.requires_arc = true
